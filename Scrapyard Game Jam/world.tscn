@@ -1,17 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://brc8uhmg0q6f7"]
+[gd_scene load_steps=4 format=3 uid="uid://brc8uhmg0q6f7"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_nisn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mow0"]
-size = Vector2(16, 16)
+size = Vector2(66, 64.5)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2g4ts"]
-width = 16
-height = 16
+width = 64
+height = 64
 invert = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp8xl"]
-size = Vector2(16, 16)
 
 [node name="world" type="Node2D"]
 
@@ -19,12 +16,11 @@ size = Vector2(16, 16)
 script = ExtResource("1_nisn5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_5mow0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = SubResource("NoiseTexture2D_2g4ts")
 
-[node name="Area2D" type="Area2D" parent="Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-shape = SubResource("RectangleShape2D_gp8xl")
+[node name="BulletPoint" type="Node2D" parent="Player"]
+position = Vector2(65, 0)

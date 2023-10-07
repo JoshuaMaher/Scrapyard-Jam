@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://barw7ddpdd57y"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_o6suj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bfddp"]
+width = 16
+height = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nb58"]
+size = Vector2(16, 16)
+
+[node name="Bullet" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_o6suj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("NoiseTexture2D_bfddp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5nb58")
